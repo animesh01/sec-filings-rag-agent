@@ -79,7 +79,12 @@ class RagIndex:
         self.chunks = chunks
         self.vectorizer = TfidfVectorizer(
             stop_words="english", ngram_range=(1, 2), min_df=1, sublinear_tf=True)
-        self.matrix = self.vectorizer.fit_transform([c.text for c in chunks])
+        # index the section label alongside the body so a question that uses the
+        # section's vocabulary (e.g. "liquidity") still matches even when the body
+        # phrases it differently ("cash", "credit facility"). A common RAG fix for
+        # question/document vocabulary mismatch.
+        self.matrix = self.vectorizer.fit_transform(
+            [f"{c.section}. {c.section}. {c.text}" for c in chunks])
 
     def search(self, query: str, top_k: int = 4,
                token_budget: Optional[int] = None) -> list[tuple[Chunk, float]]:
@@ -158,17 +163,19 @@ def answer_question(query: str, index: RagIndex, top_k: int = 4,
     """End-to-end: retrieve -> (compress) -> ground -> score."""
     hits = index.search(query, top_k=top_k, token_budget=token_budget)
 
-    # Refusal gate: keep only hits with genuine query-term overlap with the chunk,
-    # so a company-name boost alone can't carry an otherwise-irrelevant question
-    # (e.g. "what is the CEO's favorite color" must refuse).
+    # Refusal gate: keep a hit if it has genuine query-term overlap with the chunk
+    # (body OR section label), or a strong standalone retrieval score. This lets a
+    # real match through even when the question and the filing use different words,
+    # while still refusing truly out-of-corpus questions.
     q_terms = {t for t in re.findall(r"\w+", query.lower()) if len(t) > 3}
     kept = []
     for ch, score in hits:
         if score < min_score:
             continue
-        chunk_terms = set(re.findall(r"\w+", ch.text.lower()))
+        searchable = (ch.text + " " + ch.section).lower()
+        chunk_terms = set(re.findall(r"\w+", searchable))
         content_overlap = len(q_terms & chunk_terms)
-        if content_overlap >= 1:
+        if content_overlap >= 1 or score >= 0.12:
             kept.append((ch, score))
     hits = kept
 

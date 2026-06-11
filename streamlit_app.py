@@ -20,7 +20,15 @@ import streamlit as st
 import sys
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from rag_pipeline import (chunk_corpus, RagIndex, answer_question, estimate_tokens)
+try:
+    from rag_pipeline import (chunk_corpus, RagIndex, answer_question, estimate_tokens)
+except ModuleNotFoundError as e:
+    import streamlit as _st
+    _st.error(
+        "Could not import the RAG pipeline. This usually means the `scripts/` folder "
+        "didn't get pushed to the repo. The repo root must contain `streamlit_app.py`, "
+        "`scripts/`, and `data/` side by side. Missing module: " + str(e))
+    _st.stop()
 
 CORPUS = ROOT / "data" / "corpus.json"
 

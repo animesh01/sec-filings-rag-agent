@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body class="stApp" style="padding:30px"><style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+        .stApp { background:
+            radial-gradient(1200px 500px at 18% -8%, #f0f7f3 0%, rgba(240,247,243,0) 60%),
+            linear-gradient(180deg, #e8efea 0%, #e0e9e4 100%); }
+        html, body, [class*="css"] { font-family:"DM Sans",sans-serif; color:#10241f; }
+        h1,h2,h3,h4 { font-family:"Manrope",sans-serif !important; letter-spacing:-0.025em; color:#10241f !important; }
+        .stCaption, [data-testid="stCaptionContainer"] { color:#5f7268 !important; }
+        .hero { position:relative; overflow:hidden; border-radius:24px; padding:32px 36px; margin-bottom:18px; color:#fff;
+            background:linear-gradient(135deg,#0a6f57 0%,#0e8f6f 52%,#3fb98e 100%);
+            box-shadow:0 2px 2px rgba(10,50,40,.10), 0 16px 32px -10px rgba(14,120,90,.4), 0 44px 70px -24px rgba(14,120,90,.42); }
+        .hero::before { content:""; position:absolute; inset:0 0 auto 0; height:1px; border-radius:24px 24px 0 0;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent); }
+        .hero h1, .hero h1 * { color:#fff !important; -webkit-text-fill-color:#fff !important; font-size:2.0rem; margin:8px 0 8px; }
+        .hero p { color:#e7f6ef !important; font-size:1.0rem; line-height:1.5; max-width:78%; margin:0; }
+        .hero p b { color:#fff !important; }
+        .hero .pill { display:inline-block; padding:6px 14px; border-radius:999px;
+            background:rgba(255,255,255,0.22); color:#fff !important; font-size:0.72rem; font-weight:700;
+            letter-spacing:0.06em; text-transform:uppercase; box-shadow:inset 0 1px 0 rgba(255,255,255,.3); }
+        .hero-art { position:absolute; right:28px; top:22px; opacity:0.96; filter:drop-shadow(0 12px 18px rgba(10,50,40,.3)); }
+        .section-title { font-family:Manrope; font-weight:800; font-size:1.26rem; margin:12px 0 2px; letter-spacing:-0.015em; }
+        .section-copy { color:#5f7268; font-size:0.96rem; margin-bottom:14px; max-width:840px; line-height:1.5; }
+        .panel { position:relative; background:linear-gradient(180deg,#fff,#fafdfb); border:1px solid #dfeae5;
+            border-radius:20px; padding:22px 24px; margin-top:14px;
+            box-shadow:0 1px 1px rgba(10,50,40,.04), 0 6px 12px -3px rgba(10,50,40,.10), 0 20px 34px -12px rgba(10,50,40,.16); }
+        .panel::before { content:""; position:absolute; inset:0 0 auto 0; height:1px; border-radius:20px 20px 0 0;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent); }
+        .answer { font-size:1.05rem; line-height:1.6; color:#10241f; }
+        .answer sup, .answer .cref { color:#0a6f57; font-weight:700; }
+        .ground-chip { display:inline-block; font-weight:800; font-size:0.8rem; padding:5px 13px; border-radius:10px; box-shadow:inset 0 1px 0 #fff; }
+        .cite { border:1px solid #dfeae5; border-left:3px solid #0e8f6f; border-radius:12px; padding:12px 15px; margin:8px 0;
+            background:#fff; box-shadow:0 4px 10px -8px rgba(10,50,40,.3); }
+        .cite .meta { font-size:0.78rem; color:#5f7268; margin-bottom:4px; }
+        .cite .meta b { color:#0a6f57; font-family:Manrope; }
+        .cite .snip { font-size:0.9rem; color:#10241f; line-height:1.45; }
+        .cite a { color:#0a6f57; font-size:0.78rem; text-decoration:none; font-weight:600; }
+        .refuse { border:1px solid #f1d9c9; border-left:3px solid #c08a2d; background:#fdf6ee; border-radius:12px;
+            padding:14px 18px; color:#7a5a1e; font-size:0.98rem; line-height:1.5; }
+        .kpi-row { display:flex; gap:13px; flex-wrap:wrap; margin-top:4px; }
+        .kpi { flex:1; min-width:150px; position:relative; background:linear-gradient(180deg,#fff,#fafdfb); border:1px solid #dfeae5;
+            border-radius:16px; padding:14px 17px;
+            box-shadow:0 1px 1px rgba(10,50,40,.04), 0 6px 12px -3px rgba(10,50,40,.10); }
+        .kpi .lbl { font-size:0.72rem; font-weight:700; color:#5f7268; text-transform:uppercase; letter-spacing:0.04em; }
+        .kpi .val { font-family:Manrope; font-weight:800; font-size:1.5rem; margin:6px 0 0; letter-spacing:-0.02em; }
+        .kpi .sub { font-size:0.74rem; color:#9aa8a0; margin-top:2px; }
+        .takeaway { background:linear-gradient(180deg,#fff,#fafdfb); border:1px solid #dfeae5; border-left:3px solid #0e8f6f;
+            border-radius:14px; padding:14px 18px; font-size:0.95rem; line-height:1.5; margin:12px 0 4px; color:#4c5a52;
+            box-shadow:0 1px 1px rgba(10,50,40,.04), 0 6px 12px -3px rgba(10,50,40,.10); }
+        .takeaway b { font-family:Manrope; color:#10241f; }
+        .stepcard { background:linear-gradient(180deg,#fff,#fafdfb); border:1px solid #dfeae5; border-radius:16px;
+            padding:15px 17px; box-shadow:0 1px 1px rgba(10,50,40,.04), 0 6px 12px -3px rgba(10,50,40,.10); }
+        .stepcard .n { font-size:0.72rem; font-weight:800; color:#0e8f6f; text-transform:uppercase; letter-spacing:0.05em; }
+        .stepcard .t { font-weight:800; font-family:Manrope; margin:4px 0 6px; }
+        .stepcard .d { color:#5f7268; font-size:0.84rem; line-height:1.4; }
+        .stTabs [data-baseweb="tab-list"] { gap:9px; border-bottom:none !important; padding:4px 0 6px; flex-wrap:wrap; }
+        .stTabs [data-baseweb="tab"] { background:#fff !important; color:#5f7268 !important; border:1px solid #dfeae5 !important;
+            border-radius:999px !important; padding:8px 17px !important; height:auto !important;
+            box-shadow:0 4px 10px -6px rgba(10,50,40,.25), inset 0 1px 0 #fff !important;
+            transition:transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s, background .25s !important; }
+        .stTabs [data-baseweb="tab"] * { color:#5f7268 !important; }
+        .stTabs [data-baseweb="tab"]:hover { transform:translateY(-2px) !important; box-shadow:0 8px 16px -8px rgba(10,50,40,.3) !important; }
+        .stTabs [data-baseweb="tab"][aria-selected="true"] { background:#e3f3ec !important; border-color:#bfe6d5 !important; transform:translateY(-3px) !important;
+            box-shadow:0 10px 20px -8px rgba(14,143,111,.4), inset 0 1px 0 #fff !important; }
+        .stTabs [data-baseweb="tab"][aria-selected="true"] * { color:#0a6f57 !important; font-weight:700 !important; }
+        .stTabs [data-baseweb="tab-highlight"], .stTabs [data-baseweb="tab-border"] { display:none !important; background:transparent !important; }
+        [data-testid="stExpander"] { border:1px solid #dfeae5 !important; border-radius:14px; background:#fff; box-shadow:0 6px 14px -10px rgba(10,50,40,.3); overflow:hidden; }
+        [data-testid="stExpander"] summary { background:#e3f3ec !important; border-bottom:1px solid #cfe9dd !important; }
+        [data-testid="stExpander"] summary, [data-testid="stExpander"] summary * { color:#10241f !important; -webkit-text-fill-color:#10241f !important; font-weight:700 !important; }
+        [data-testid="stExpander"] summary:hover * { color:#0a6f57 !important; -webkit-text-fill-color:#0a6f57 !important; }
+        [data-testid="stExpander"] p, [data-testid="stExpander"] li { color:#10241f !important; }
+        .stButton button[kind="primary"] { background:linear-gradient(180deg,#0e8f6f,#0a6f57) !important; color:#fff !important;
+            border:none !important; font-weight:700 !important; border-radius:12px !important;
+            box-shadow:0 8px 18px -6px rgba(14,143,111,.5), inset 0 1px 0 rgba(255,255,255,.2) !important; }
+        .stButton button[kind="primary"]:hover { filter:brightness(1.07); transform:translateY(-1px); }
+        [data-testid="stTextInput"] input { border-radius:12px !important; border-color:#dfeae5 !important; }
+        [data-baseweb="slider"] [role="slider"] { background:#0e8f6f !important; }
+        [data-testid="stSidebar"] { background:#f3f8f5 !important; }
+        </style>
+<div class="hero"><svg class='hero-art' width='148' height='104' viewBox='0 0 148 104' fill='none'><circle cx='116' cy='38' r='56' fill='rgba(255,255,255,0.06)'/><rect x='20' y='16' width='62' height='78' rx='9' fill='#fff'/><rect x='30' y='30' width='36' height='5' rx='2.5' fill='#0a6f57'/><rect x='30' y='42' width='42' height='4' rx='2' fill='#bfe0d3'/><rect x='30' y='52' width='42' height='4' rx='2' fill='#bfe0d3'/><rect x='30' y='62' width='28' height='4' rx='2' fill='#bfe0d3'/><circle cx='104' cy='44' r='22' fill='#fff'/><circle cx='104' cy='44' r='22' fill='none' stroke='#bfe0d3' stroke-width='2'/><text x='104' y='53' text-anchor='middle' font-family='Manrope,sans-serif' font-weight='800' font-size='26' fill='#0a6f57'>$</text><circle cx='120' cy='74' r='11' fill='#1aa06a' stroke='#fff' stroke-width='2.4'/><path d='M115 74 l3.5 3.5 l6 -7' stroke='#fff' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg><span class="pill">Finance-ops RAG agent . grounded in SEC filings</span><h1>FilingsIQ</h1>
+<p>Ask a finance question and get an answer <b>grounded in real SEC filing passages</b>, with citations to the exact filing and section - and an honest refusal when the answer isn't in the documents. <b>Auditable by design.</b></p></div></body></html>

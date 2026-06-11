@@ -1,0 +1,83 @@
+{
+  "source": "bundled samples (run --live to use real EDGAR filings)",
+  "n_docs": 8,
+  "companies": [
+    "Atlas Logistics Inc",
+    "Northwind Retail Corp",
+    "Veridian Health Systems"
+  ],
+  "docs": [
+    {
+      "company": "Northwind Retail Corp",
+      "ticker": "NWND",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "section": "Management's Discussion and Analysis (MD&A)",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-nwnd-10k.htm",
+      "text": "Net revenues for fiscal 2024 increased 6.2% to $48.3 billion, compared to $45.5 billion in the prior year. The increase was driven primarily by growth in comparable store sales of 4.1% and continued expansion of our e-commerce channel, which grew 18% year over year and represented 22% of total net revenues. Gross margin declined 40 basis points to 24.8%, reflecting higher supply-chain and fulfillment costs, partially offset by improved inventory management. Operating income was $3.1 billion, or 6.4% of net revenues, compared to 6.7% in the prior year. We expect continued investment in fulfillment automation and digital capabilities to pressure operating margin modestly in the near term while supporting long-term growth."
+    },
+    {
+      "company": "Northwind Retail Corp",
+      "ticker": "NWND",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "section": "Liquidity and Capital Resources",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-nwnd-10k.htm",
+      "text": "As of the end of fiscal 2024, we held cash and cash equivalents of $4.2 billion and had $3.0 billion of unused capacity under our revolving credit facility. Net cash provided by operating activities was $5.6 billion, compared to $5.1 billion in the prior year, driven by higher net income and favorable working capital. Capital expenditures were $2.4 billion, primarily for fulfillment center automation and technology. We returned $1.8 billion to shareholders through dividends and share repurchases. We believe our existing cash, cash flow from operations, and available credit will be sufficient to meet our anticipated operating and capital requirements for at least the next twelve months."
+    },
+    {
+      "company": "Northwind Retail Corp",
+      "ticker": "NWND",
+      "form": "10-K",
+      "filing_date": "2025-02-18",
+      "section": "Risk Factors",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-nwnd-10k.htm",
+      "text": "Our business is highly competitive, and we face pressure from both established retailers and rapidly growing online platforms. If we are unable to compete effectively on price, selection, and convenience, our market share and profitability could decline. We are also exposed to risks from supply-chain disruption, including transportation delays and supplier concentration. A significant interruption in our fulfillment network could adversely affect our ability to meet customer demand. In addition, our growing reliance on technology, including AI-driven personalization and automated systems, exposes us to cybersecurity and data-privacy risks; a material breach could harm our reputation and result in regulatory penalties."
+    },
+    {
+      "company": "Atlas Logistics Inc",
+      "ticker": "ATLS",
+      "form": "10-Q",
+      "filing_date": "2025-05-06",
+      "section": "Management's Discussion and Analysis (MD&A)",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-atls-10q.htm",
+      "text": "Revenue for the first quarter of 2025 was $7.9 billion, an increase of 3.4% compared to the prior-year quarter. Volume growth in our ground segment was partially offset by softness in international air freight. Operating expenses rose 4.1%, driven by higher labor and fuel costs. Operating margin compressed to 8.2% from 8.9% a year earlier. We continue to execute our network optimization program, which is expected to deliver approximately $400 million in annualized cost savings by the end of 2026."
+    },
+    {
+      "company": "Atlas Logistics Inc",
+      "ticker": "ATLS",
+      "form": "10-Q",
+      "filing_date": "2025-05-06",
+      "section": "Liquidity and Capital Resources",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-atls-10q.htm",
+      "text": "We ended the quarter with $2.1 billion in cash and short-term investments. Free cash flow for the quarter was $310 million. During the quarter we issued $1.0 billion of senior unsecured notes due 2032 at a weighted-average interest rate of 5.1%, using proceeds to refinance maturing debt and for general corporate purposes. Our leverage ratio, measured as net debt to trailing twelve-month EBITDA, was 2.3x, within our target range of 2.0x to 2.5x."
+    },
+    {
+      "company": "Atlas Logistics Inc",
+      "ticker": "ATLS",
+      "form": "10-Q",
+      "filing_date": "2025-05-06",
+      "section": "Controls and Procedures",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-atls-10q.htm",
+      "text": "Management, under the supervision of our Chief Executive Officer and Chief Financial Officer, evaluated the effectiveness of our disclosure controls and procedures as of the end of the period. Based on that evaluation, our CEO and CFO concluded that our disclosure controls and procedures were effective. There were no changes in our internal control over financial reporting during the quarter that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting."
+    },
+    {
+      "company": "Veridian Health Systems",
+      "ticker": "VRDN",
+      "form": "10-K",
+      "filing_date": "2025-03-04",
+      "section": "Risk Factors",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-vrdn-10k.htm",
+      "text": "We operate in a heavily regulated industry, and changes in healthcare laws, reimbursement rates, or coverage policies could materially affect our revenues. A significant portion of our revenue is derived from government payers, and reductions in reimbursement could adversely impact our results. We are also subject to extensive privacy regulations governing protected health information; failure to comply could result in significant penalties. Our increasing use of clinical decision-support algorithms introduces model-governance and patient-safety considerations that are subject to evolving regulatory scrutiny."
+    },
+    {
+      "company": "Veridian Health Systems",
+      "ticker": "VRDN",
+      "form": "10-K",
+      "filing_date": "2025-03-04",
+      "section": "Revenue",
+      "url": "https://www.sec.gov/Archives/edgar/data/000000/sample-vrdn-10k.htm",
+      "text": "Total revenues for fiscal 2024 were $12.6 billion, up 7.8% from the prior year. Revenue is recognized as services are provided to patients, net of contractual allowances and estimated uncollectible amounts. We estimate contractual allowances using historical collection experience and current payer mix. Approximately 58% of net patient revenue was attributable to government payers, with the remainder from commercial insurers and self-pay patients."
+    }
+  ]
+}

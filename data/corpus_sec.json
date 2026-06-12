@@ -1,5 +1,5 @@
 {
-  "source": "bundled samples (run --live to use real EDGAR filings)",
+  "source": "bundled samples (run --sec --live to use real EDGAR filings)",
   "n_docs": 8,
   "companies": [
     "Atlas Logistics Inc",

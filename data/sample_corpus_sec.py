@@ -1,4 +1,4 @@
-"""Sample SEC-filing corpus for FilingsIQ.
+"""Sample SEC-filing corpus for LedgerIQ.
 
 These are realistic, representative excerpts modeled on the structure and style of
 real 10-K / 10-Q filings (Risk Factors, MD&A, Liquidity, Revenue, Controls). They

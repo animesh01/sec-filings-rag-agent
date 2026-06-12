@@ -1,4 +1,4 @@
-"""FilingsIQ EDGAR MCP Server.
+"""LedgerIQ — SEC EDGAR MCP Server.
 
 Exposes the SEC EDGAR fetcher as Model Context Protocol (MCP) tools, so an
 agent (Claude, or any MCP client) can retrieve real filings on demand as part
@@ -34,7 +34,7 @@ from mcp.server import Server  # noqa: E402
 from mcp.server.stdio import stdio_server  # noqa: E402
 from mcp.types import Tool, TextContent  # noqa: E402
 
-app = Server("filingsiq-edgar")
+app = Server("ledgeriq-edgar")
 
 
 @app.list_tools()
